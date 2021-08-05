@@ -14,13 +14,19 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';
 import { SqladminComponent } from './sqladmin';
+import { ReportsComponent } from './reports';
+
+import { MatTableModule}  from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        MatTableModule,
+        MatAutocompleteModule 
     ],
     declarations: [
         AppComponent,
@@ -28,7 +34,8 @@ import { SqladminComponent } from './sqladmin';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
-        SqladminComponent
+        SqladminComponent,
+        ReportsComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
